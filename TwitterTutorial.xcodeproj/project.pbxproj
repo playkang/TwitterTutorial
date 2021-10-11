@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D2C43D32714974D00D6969F /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2C43D22714974D00D6969F /* RegistrationController.swift */; };
 		3D8F8D67271016BD00F9746C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F8D66271016BD00F9746C /* AppDelegate.swift */; };
 		3D8F8D69271016BD00F9746C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8F8D68271016BD00F9746C /* SceneDelegate.swift */; };
 		3D8F8D6E271016BD00F9746C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D8F8D6C271016BD00F9746C /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		08471657A1B6E6B44F1A6239 /* Pods_TwitterTutorial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterTutorial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD3DFAE076239CF173DA020 /* Pods-TwitterTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterTutorial.release.xcconfig"; path = "Target Support Files/Pods-TwitterTutorial/Pods-TwitterTutorial.release.xcconfig"; sourceTree = "<group>"; };
+		3D2C43D22714974D00D6969F /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		3D8F8D63271016BD00F9746C /* TwitterTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8F8D66271016BD00F9746C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D8F8D68271016BD00F9746C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				3D8F8D8F27102DA100F9746C /* LoginController.swift */,
+				3D2C43D22714974D00D6969F /* RegistrationController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -168,7 +171,6 @@
 				5F2CEFED6DC139B710E5D42E /* Pods-TwitterTutorial.debug.xcconfig */,
 				2FD3DFAE076239CF173DA020 /* Pods-TwitterTutorial.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -293,6 +295,7 @@
 				3D8F8D8727101A8400F9746C /* ExploreController.swift in Sources */,
 				3D8F8D69271016BD00F9746C /* SceneDelegate.swift in Sources */,
 				3D8F8D832710185B00F9746C /* MainTabController.swift in Sources */,
+				3D2C43D32714974D00D6969F /* RegistrationController.swift in Sources */,
 				3DE8C1382712DFFD001181CE /* ConversationsController.swift in Sources */,
 				3D8F8D9027102DA100F9746C /* LoginController.swift in Sources */,
 				3D8F8D9227103B4F00F9746C /* Utilities.swift in Sources */,
