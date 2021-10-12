@@ -11,6 +11,12 @@ class LoginController: UIViewController {
     
     // MARK : - Properties
     
+    private let dontHaveAccountButton: UIButton = {
+        let button = Utilities().attributedButton("Don't have an account?", " Sign Up")
+        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
+        return button
+    }()
+    
     private let logoImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -54,13 +60,6 @@ class LoginController: UIViewController {
         return button
     }()
     
-    private let dontHaveAccountButton: UIButton = {
-        let button = Utilities().attributedButton("Don't have an account?", " Sign Up")
-        button.addTarget(self, action: #selector(handleShowSignUp), for: .touchUpInside)
-        return button
-    }()
-    
-    
     // MARK : - Lifecycle
     
     override func viewDidLoad() {
@@ -71,6 +70,8 @@ class LoginController: UIViewController {
     // MARK : - Selectors
     
     @objc func handleShowSignUp() {
+        let controller = RegistrationController()
+        navigationController?.pushViewController(controller, animated: true)
         print("Show sign up..")
     }
     
