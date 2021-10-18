@@ -12,6 +12,15 @@ class MainTabController: UITabBarController {
     
     // MARK: - Properties
     
+    var user: User? {
+        didSet {
+            guard let nav = viewControllers?.first as? UINavigationController else { return }
+            guard let feed = nav.viewControllers.first as? FeedController else { return }
+            
+            feed.user = user
+        }
+    }
+    
     let actionButton: UIButton = {
         let button = UIButton(type: .system)
         button.tintColor  = .white
@@ -33,7 +42,9 @@ class MainTabController: UITabBarController {
     // MARK: - API
     
     func fetchUser() {
-        UserService.shared.fetchUser()
+        UserService.shared.fetchUser { user in
+            self.user = user
+        }
     }
     
     func authenticateUserAndConfigureUI() {
@@ -62,7 +73,11 @@ class MainTabController: UITabBarController {
     // MARK: - Selectors
     
     @objc func actionButtonTapped() {
-        print(123)
+        guard let user = user else { return }
+        let controller = UploadTweetController(user: user)
+        let nav = UINavigationController(rootViewController: controller)
+        nav.modalPresentationStyle = .fullScreen
+        present(nav, animated: true, completion: nil)
     }
     
     // MARK: - Helpers
