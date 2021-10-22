@@ -2,14 +2,15 @@
 //  UploadTweetController.swift
 //  TwitterTutorial
 //
-//  Created by Kang on 2021/10/14.
+//  Created by Kang on 2021/10/19.
 //
-
 import UIKit
 
 class UploadTweetController: UIViewController {
     
     // MARK: - Properties
+    
+    private let user: User
     
     private lazy var actionButton: UIButton = {
         let button = UIButton(type: .system)
@@ -39,9 +40,20 @@ class UploadTweetController: UIViewController {
     
     // MARK: - Lifecycle
     
+    init(user: User) {
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        
+        print("DEBUG: User is \(user.username)")
     }
     
     // MARK: - Selectors
@@ -51,7 +63,7 @@ class UploadTweetController: UIViewController {
     }
     
     @objc func handleUploadTweet() {
-        print("DEBUG: Upload tweet here..")
+        print("DEBUG: Uplaod tweet here..")
     }
     
     // MARK: - API
@@ -64,6 +76,8 @@ class UploadTweetController: UIViewController {
         
         view.addSubview(profileImageView)
         profileImageView.anchor(top: view.safeAreaLayoutGuide.topAnchor, left: view.leftAnchor, paddingTop: 16, paddingLeft: 16)
+        
+        profileImageView.sd_setImage(with: user.profileImageUrl, completed: nil)
     }
     
     func configureNavigationBar() {

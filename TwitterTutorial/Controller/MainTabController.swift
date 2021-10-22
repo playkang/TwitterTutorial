@@ -4,7 +4,6 @@
 //
 //  Created by Kang on 2021/10/08.
 //
-
 import UIKit
 import Firebase
 
@@ -14,7 +13,7 @@ class MainTabController: UITabBarController {
     
     var user: User? {
         didSet {
-            guard let nav = viewControllers?[0] as? UINavigationController else { return }
+            guard let nav = viewControllers?.first as? UINavigationController else { return }
             guard let feed = nav.viewControllers.first as? FeedController else { return }
             
             feed.user = user
@@ -73,7 +72,9 @@ class MainTabController: UITabBarController {
     // MARK: - Selectors
     
     @objc func actionButtonTapped() {
-        let nav  = UINavigationController(rootViewController: UploadTweetController())
+        guard let user = user else { return }
+        let controller = UploadTweetController(user: user)
+        let nav = UINavigationController(rootViewController: controller)
         nav.modalPresentationStyle = .fullScreen
         present(nav, animated: true, completion: nil)
     }

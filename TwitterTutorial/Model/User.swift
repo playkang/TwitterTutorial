@@ -4,7 +4,6 @@
 //
 //  Created by Kang on 2021/10/13.
 //
-
 import Foundation
 
 struct User {

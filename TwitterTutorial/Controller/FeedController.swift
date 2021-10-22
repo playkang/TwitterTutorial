@@ -4,7 +4,6 @@
 //
 //  Created by Kang on 2021/10/08.
 //
-
 import UIKit
 import SDWebImage
 
@@ -16,7 +15,6 @@ class FeedController: UIViewController {
     }
     
     // MARK: - Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -31,12 +29,15 @@ class FeedController: UIViewController {
         imageView.contentMode = .scaleAspectFit
         imageView.setDimensions(width: 44, height: 44)
         navigationItem.titleView = imageView
+        
+        
     }
     
     func configureLeftBarButton() {
         guard let user = user else { return }
         
         let profileImageView = UIImageView()
+        profileImageView.backgroundColor = .twitterBlue
         profileImageView.setDimensions(width: 32, height: 32)
         profileImageView.layer.cornerRadius = 32 / 2
         profileImageView.layer.masksToBounds = true
