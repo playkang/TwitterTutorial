@@ -23,7 +23,7 @@ class UploadTweetController: UIViewController {
         button.frame = CGRect(x: 0, y: 0, width: 64, height: 32)
         button.layer.cornerRadius = 32 / 2
         
-        button.addTarget(self, action: #selector(handleUploadTweet), for: .touchUpInside)
+//        button.addTarget(self, action: #selector(handleUploadTweet), for: .touchUpInside)
         
         return button
     }()
@@ -68,6 +68,11 @@ class UploadTweetController: UIViewController {
         guard let caption = captionTextView.text else { return }
         TweetService.shared.uploadTweet(caption: caption) { (error, ref) in
             print("DEBUG: Tweet did upload to database..")
+            if let error = error {
+                print("DEBUG: Failed to upload tweet with error \(error.localizedDescription)")
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
